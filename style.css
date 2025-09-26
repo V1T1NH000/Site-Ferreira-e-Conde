@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -221,5 +226,327 @@ body {
 
     .hero {
         height: 60vh;
+    }
+}
+
+/* ... (código CSS existente) ... */
+
+/*
+=============================
+SEÇÃO SOBRE NÓS
+=============================
+*/
+.about-us {
+    display: flex;
+    align-items: center;
+    background-color: #0A1128; /* Cor de fundo escura */
+    color: #F7F3EC; /* Cor do texto claro */
+    padding: 5rem 10%; /* Espaçamento interno */
+    gap: 4rem;
+    min-height: 80vh;
+}
+
+.about-content {
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 600px;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Ícones de Uniformes */
+.uniform-icons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.icon-item {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+.icon-item svg {
+    width: 100%;
+    height: auto;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Responsividade da Seção Sobre Nós */
+@media (max-width: 1024px) {
+    .about-us {
+        gap: 2rem;
+        padding: 5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .uniform-icons {
+        flex-direction: row; /* Ícones lado a lado no mobile */
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 3rem;
+        max-width: 400px;
+    }
+
+    .icon-item {
+        width: 80px; /* Reduz o tamanho dos ícones */
+        margin: 0 10px;
+    }
+}
+
+
+/*
+=============================
+SEÇÃO LOCALIZAÇÃO
+=============================
+*/
+/*
+=============================
+SEÇÃO LOCALIZAÇÃO (NOVO ESTILO)
+=============================
+*/
+/* Removemos o 'background-image' quadriculado e ajustamos o padding e cores */
+.location-section-new {
+    position: relative;
+    background-color: #0A214D; /* Azul marinho escuro (como na imagem) */
+    padding: 8rem 10%; /* Aumenta o padding vertical */
+    color: #F7F3EC;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Os pinos de localização (mantidos, mas posicionados) */
+.location-pins {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1; /* Pinos atrás do conteúdo */
+}
+
+/* Ajuste o tamanho dos pinos conforme preferir */
+.location-pins img {
+    position: absolute;
+    width: 250px; 
+    opacity: 1; /* Pinos mais visíveis */
+}
+
+.pin-top-left {
+    top: -50px;
+    left: -100px;
+    transform: none; /* remove o transform anterior */
+}
+
+.pin-bottom-right {
+    bottom: -50px;
+    right: -100px;
+    transform: none; /* remove o transform anterior */
+}
+
+.location-content-new {
+    z-index: 10;
+    text-align: center; /* Centraliza o texto */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Novo box de título (preto com cor de texto azul) */
+.location-title-box-new {
+    background-color: #000;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 22px;
+    align-self: flex-start;
+    
+}
+
+.location-title-box-new h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007BFF; /* Cor azul de destaque */
+}
+
+.location-content-new p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Botão da Localização (Maior e Centralizado) */
+.location-button-new {
+    background-color: #007BFF;
+    color: #F7F3EC; 
+    padding: 1rem 4rem; /* Botão mais robusto */
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.location-button-new:hover {
+    background-color: #005fd1;
+}
+
+/* Responsividade da Seção Localização (Ajuste o padding no mobile) */
+@media (max-width: 768px) {
+    .location-section-new {
+        padding: 5rem 5%;
+    }
+    .location-title-box-new h3 {
+        font-size: 1.5rem;
+    }
+    .location-content-new p {
+        font-size: 1rem;
+    }
+    .location-button-new {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+
+/*
+=============================
+NOVO RODAPÉ (FOOTER)
+=============================
+*/
+.main-footer {
+    background-color: #E6E6E6; /* Cor de fundo cinza claro */
+    padding: 3rem 10%;
+    color: #333;
+    font-family: "Inter", sans-serif;
+}
+
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px; /* Limite a largura do conteúdo, se desejar */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-info {
+    max-width: 300px;
+}
+
+.footer-logo {
+    max-height: 40px;
+    filter: brightness(0); /* Deixa a logo preta, se ela for branca/clara */
+    margin-bottom: 1rem;
+}
+
+.footer-info p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #555;
+}
+
+.footer-links {
+    display: flex;
+    gap: 4rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-col a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: #007BFF;
+}
+
+.col-title {
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.admin-button {
+    background-color: #007BFF;
+    color: #F7F3EC !important; 
+    border: none;
+    padding: 0.5em 1.5em;
+    font-size: 1rem !important;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.admin-button:hover {
+    background-color: #005fd1;
+}
+
+/* Responsividade do Rodapé */
+@media (max-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-links {
+        gap: 2rem;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+
+    .footer-col {
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin: 0 auto 1rem auto;
     }
 }
